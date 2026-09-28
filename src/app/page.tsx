@@ -23,6 +23,7 @@ export default function Home() {
 
   return (
     <main className="bg-[#121212] min-h-screen text-white">
+      <h1 className="sr-only">Ritik Kashyap - Full Stack Software Developer</h1>
       <AnimatePresence mode="wait">
         {isLoading && (
           <Preloader

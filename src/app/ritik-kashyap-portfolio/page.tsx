@@ -1,26 +1,48 @@
-import { Metadata } from 'next'
+import { Metadata } from 'next';
 import ScrollyCanvas from "@/components/ScrollyCanvas";
 import Projects from "@/components/Projects";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-    title: 'Ritik Kashyap Portfolio - Web Development Projects',
-    description: 'View the complete development portfolio of Ritik Kashyap. Featuring full-stack applications, Next.js projects, and open source contributions.',
+    title: 'Ritik Kashyap Portfolio | Full Stack AI & Web Developer',
+    description: 'Explore Ritik Kashyap\'s portfolio. Expert in AI, ML, full stack development, Java, and JavaScript. Building scalable web solutions and modern applications.',
     alternates: {
-        canonical: 'https://ritikk.shop/ritik-kashyap-portfolio',
+        canonical: 'https://my-secondportfolio-so5v.vercel.app/ritik-kashyap-portfolio',
     },
     openGraph: {
-        title: 'Ritik Kashyap Portfolio',
-        description: 'Showcase of web development projects by Ritik Kashyap.',
-        url: 'https://ritikk.shop/ritik-kashyap-portfolio',
+        title: 'Ritik Kashyap Portfolio | Full Stack AI & Web Developer',
+        description: 'Explore Ritik Kashyap\'s portfolio. Expert in AI, ML, full stack development, Java, and JavaScript. Building scalable web solutions and modern applications.',
+        url: 'https://my-secondportfolio-so5v.vercel.app/ritik-kashyap-portfolio',
+        siteName: 'ritik -prof3',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Ritik Kashyap Portfolio | Full Stack AI & Web Developer',
+        description: 'Explore Ritik Kashyap\'s portfolio. Expert in AI, ML, full stack development, Java, and JavaScript.',
+    },
+    robots: {
+        index: true,
+        follow: true,
     }
-}
+};
 
 export default function RitikKashyapPortfolioPage() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Ritik Kashyap Portfolio",
+        "url": "https://my-secondportfolio-so5v.vercel.app/ritik-kashyap-portfolio"
+    };
+
     return (
         <main className="bg-[#121212] min-h-screen text-white">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <Navbar />
-            <h1 className="sr-only">Ritik Kashyap Portfolio</h1>
+            <h1 className="text-4xl font-bold mb-4">Ritik Kashyap Portfolio</h1>
             <ScrollyCanvas />
             <Projects />
         </main>
