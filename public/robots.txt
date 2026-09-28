@@ -1,0 +1,4 @@
+
+User-agent: *
+Allow: /
+Sitemap: https://my-secondportfolio-so5v.vercel.app/sitemap.xml

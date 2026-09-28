@@ -14,11 +14,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SEO_CONFIG.site.url),
   title: {
-    default: SEO_CONFIG.site.title,
+    default: "Ritik Kashyap | Full Stack Developer, AI & ML Expert",
     template: `%s | ${SEO_CONFIG.personal.name}`,
   },
-  description: SEO_CONFIG.site.description,
-  keywords: SEO_CONFIG.site.keywords,
+  description: "Expert Full Stack Developer specializing in AI, ML, and modern web technologies. Building scalable software solutions with React, Next.js, and Java. Explore my portfolio.",
+  keywords: ["software", "ai", "ml", "full stack", "frontend", "backend", "HTML", "CSS", "JAVA", "javascript"],
   authors: [{ name: SEO_CONFIG.personal.name, url: SEO_CONFIG.site.url }],
   creator: SEO_CONFIG.personal.name,
   publisher: SEO_CONFIG.personal.name,
@@ -34,97 +34,50 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    type: "profile",
-    firstName: SEO_CONFIG.personal.firstName,
-    lastName: SEO_CONFIG.personal.lastName,
-    username: SEO_CONFIG.social.twitter.replace("@", ""),
-    gender: "male",
+    type: "website",
     url: SEO_CONFIG.site.url,
-    siteName: SEO_CONFIG.site.name,
-    title: SEO_CONFIG.site.title,
-    description: SEO_CONFIG.site.description,
+    siteName: "Ritik Kashyap Portfolio",
+    title: "Ritik Kashyap | Full Stack Developer, AI & ML Expert",
+    description: "Expert Full Stack Developer specializing in AI, ML, and modern web technologies. Building scalable software solutions with React, Next.js, and Java.",
     images: [
       {
-        url: SEO_CONFIG.personal.avatar, // Ensure this image is high quality
+        url: SEO_CONFIG.personal.avatar,
         width: 1200,
         height: 630,
-        alt: `${SEO_CONFIG.personal.name} - ${SEO_CONFIG.personal.title}`,
+        alt: "Ritik Kashyap Full Stack Developer Portfolio",
       },
     ],
-    locale: SEO_CONFIG.site.locale,
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: SEO_CONFIG.site.title,
-    description: SEO_CONFIG.site.description,
+    title: "Ritik Kashyap | Full Stack Developer, AI & ML Expert",
+    description: "Expert Full Stack Developer specializing in AI, ML, and modern web technologies. Building scalable software solutions with React, Next.js, and Java.",
     creator: SEO_CONFIG.social.twitter,
     images: [SEO_CONFIG.personal.avatar],
   },
   alternates: {
-    canonical: SEO_CONFIG.site.url,
+    canonical: "https://my-secondportfolio-so5v.vercel.app",
   },
-  icons: {
-    icon: SEO_CONFIG.personal.avatar,
-    shortcut: SEO_CONFIG.personal.avatar,
-    apple: SEO_CONFIG.personal.avatar,
-  },
-  other: {
-    "profile:username": SEO_CONFIG.social.twitter.replace("@", ""), // Open Graph Profile
-  }
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Person",
-        "@id": `${SEO_CONFIG.site.url}/#person`,
-        "name": SEO_CONFIG.personal.name,
-        "alternateName": ["Ritik Jha", "Ritik Kashyap Developer"],
-        "url": SEO_CONFIG.site.url,
-        "image": `${SEO_CONFIG.site.url}${SEO_CONFIG.personal.avatar}`,
-        "sameAs": [
-          SEO_CONFIG.social.github,
-          SEO_CONFIG.social.linkedin,
-          SEO_CONFIG.social.twitter,
-          SEO_CONFIG.social.instagram,
-          "https://mithilastack.com",
-        ].filter(Boolean),
-        "jobTitle": SEO_CONFIG.personal.title,
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Mithila Stack", // Updated to match overlay info
-          "url": "https://mithilastack.com"
-        },
-        "knowsAbout": ["Next.js", "React", "TypeScript", "SEO", "Web Development", "System Design", "UI/UX Design"],
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "IN"
-        }
+        "@id": "https://my-secondportfolio-so5v.vercel.app/#person",
+        "name": "Ritik Kashyap",
+        "url": "https://my-secondportfolio-so5v.vercel.app",
+        "jobTitle": "Full Stack Developer",
+        "knowsAbout": ["AI", "ML", "Full Stack", "Java", "JavaScript"]
       },
       {
         "@type": "WebSite",
-        "@id": `${SEO_CONFIG.site.url}/#website`,
-        "url": SEO_CONFIG.site.url,
-        "name": SEO_CONFIG.site.name,
-        "description": SEO_CONFIG.site.description,
-        "publisher": {
-          "@id": `${SEO_CONFIG.site.url}/#person`
-        },
-        "inLanguage": "en-US",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": `${SEO_CONFIG.site.url}/?q={search_term_string}`
-          },
-          "query-input": "required name=search_term_string"
-        }
+        "@id": "https://my-secondportfolio-so5v.vercel.app/#website",
+        "url": "https://my-secondportfolio-so5v.vercel.app",
+        "name": "Ritik Kashyap Portfolio"
       }
     ]
   };
@@ -144,4 +97,3 @@ export default function RootLayout({
     </html>
   );
 }
-
